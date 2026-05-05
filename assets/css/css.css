@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #c9d6d8;
+    color: #1a1a1a;
+}
+
+.site-header {
+    background-color: #c7d6d9;
+    padding: 15px 0;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    background-color: #a9c0d6;
+    padding: 10px 30px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+    font-family: cursive;
+}
+
+.nav-list a:hover {
+    text-decoration: underline;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+    background-color: #a9c0d6;
+}
+
+.hero-section::before {
+    content: "";
+    width: 220px;
+    height: 220px;
+    background-image: url("../img/sewing.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-family: cursive;
+}
+
+.hero-text {
+    font-size: 18px;
+}
+
+.services-section {
+    padding: 60px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.card {
+    background-color: #9ec6cc;
+    padding: 30px;
+    width: 300px;
+    min-height: 300px;
+}
+
+.card-title {
+    font-size: 26px;
+    font-family: cursive;
+    margin-bottom: 20px;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.site-footer {
+    background-color: #a9c0d6;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
