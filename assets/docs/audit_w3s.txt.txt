@@ -1,0 +1,4 @@
+Număr de erori 0
+Am folosit ChatGPT ca să îmi corectez greșelile
+inainte de a vedea ca trebuie sa folosesc W3C Markup Validator
+scuze

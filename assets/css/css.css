@@ -1,116 +1,156 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
-
-body {
-    font-family: "Segoe UI", sans-serif;
-    background-color: #c9d6d8;
-    color: #1a1a1a;
+body{
+    font-family:"Segoe UI", sans-serif;
+    background:#c9d6d8;
+    color:#1a1a1a;
+    line-height:1.6;
 }
-
-.site-header {
-    background-color: #c7d6d9;
-    padding: 15px 0;
+.site-header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,0.8);
+    backdrop-filter:blur(10px);
+    padding:15px 40px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.05);
 }
-
-.main-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
+.main-nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-
-.logo img {
-    height: 50px;
-    width: auto;
-    display: block;
+.logo img{
+    height:60px;
+    display:block;
 }
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 40px;
-    background-color: #a9c0d6;
-    padding: 10px 30px;
+.nav-list{
+    list-style:none;
+    display:flex;
+    gap:30px;
 }
-
-.nav-list a {
-    text-decoration: none;
-    font-size: 22px;
-    color: black;
-    font-family: cursive;
+.nav-list a{
+    position:relative;
+    text-decoration:none;
+    color:#111;
+    font-size:20px;
+    font-family:cursive;
 }
-
-.nav-list a:hover {
-    text-decoration: underline;
+.nav-list a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:#111;
+    transition:width 0.3s ease;
 }
-
-.hero-section {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-    padding: 60px;
-    background-color: #a9c0d6;
+.nav-list a:hover::after{
+    width:100%;
 }
-
-.hero-section::before {
-    content: "";
-    width: 220px;
-    height: 220px;
-    background-image: url("../img/sewing.jpg");
-    background-size: cover;
-    background-position: center;
-    border-radius: 50%;
+.hero-section{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    padding:80px 60px;
+    background:#a9c0d6;
 }
-
-.hero-title {
-    font-size: 48px;
-    font-family: cursive;
+.hero-image{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    background-image:url("../img/sewing.jpg");
+    background-size:cover;
+    background-position:center;
+    flex-shrink:0;
 }
-
-.hero-text {
-    font-size: 18px;
+.hero-title{
+    font-size:48px;
+    margin-bottom:20px;
+    font-family:cursive;
 }
-
-.services-section {
-    padding: 60px;
-    text-align: center;
+.hero-text{
+    font-size:18px;
 }
-
-.section-title {
-    font-size: 28px;
-    margin-bottom: 40px;
+.services-section{
+    padding:80px 60px;
 }
-
-.cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
+.section-title{
+    text-align:center;
+    font-size:36px;
+    margin-bottom:50px;
 }
-
-.card {
-    background-color: #9ec6cc;
-    padding: 30px;
-    width: 300px;
-    min-height: 300px;
+.services-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+    gap:30px;
 }
-
-.card-title {
-    font-size: 26px;
-    font-family: cursive;
-    margin-bottom: 20px;
+.service-card{
+    background:#9ec6cc;
+    padding:30px;
+    border-radius:12px;
+    min-height:250px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:
+    transform 0.3s cubic-bezier(0.25,0.46,0.45,0.94),
+    box-shadow 0.3s ease;
 }
-
-.card-text {
-    font-size: 16px;
-    line-height: 1.6;
+.service-card:hover{
+    transform:translateY(-12px);
+    box-shadow:0 20px 40px rgba(0,0,0,0.1);
 }
-
-.site-footer {
-    background-color: #a9c0d6;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+.card-title{
+    font-size:28px;
+    margin-bottom:20px;
+    font-family:cursive;
+}
+.card-text{
+    font-size:17px;
+}
+.mission-section{
+    display:flex;
+    align-items:center;
+    gap:50px;
+    padding:80px 60px;
+}
+.mission-image img{
+    width:100%;
+    max-width:450px;
+    border-radius:12px;
+    display:block;
+}
+.mission-text h2{
+    font-size:36px;
+    margin-bottom:20px;
+}
+.site-footer{
+    background:#a9c0d6;
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+}
+@media(max-width:768px){
+    .hero-section{
+        flex-direction:column;
+        text-align:center;
+    }
+    .mission-section{
+        flex-direction:column-reverse;
+    }
+    .main-nav{
+        flex-direction:column;
+        gap:20px;
+    }
+    .nav-list{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+    .hero-title{
+        font-size:36px;
+    }
 }
