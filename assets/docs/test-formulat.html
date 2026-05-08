@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Validare</title>
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    :root{
+        --theme-color:#dfe8f5;
+    }
+    body{
+        font-family:Arial,sans-serif;
+        background:#ececec;
+        padding:40px;
+    }
+    .form-container{
+        max-width:600px;
+        margin:auto;
+        background:var(--theme-color);
+        padding:35px;
+        border-radius:20px;
+        box-shadow:0 8px 20px rgba(0,0,0,0.1);
+        transition:0.3s;
+    }
+    h1{
+        margin-bottom:30px;
+    }
+    .form-group{
+        margin-bottom:25px;
+    }
+    label{
+        display:block;
+        margin-bottom:10px;
+        font-size:20px;
+    }
+    input{
+        width:100%;
+        padding:14px;
+        border:2px solid #ccc;
+        border-radius:10px;
+        font-size:16px;
+    }
+    input:focus{
+        outline:none;
+        border-color:#5f93cf;
+    }
+    .btn{
+        width:100%;
+        padding:15px;
+        border:none;
+        border-radius:10px;
+        background:#5f93cf;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+    }
+    .btn:hover{
+        opacity:0.9;
+    }
+</style>
+</head>
+<body>
+<div class="form-container" id="testForm">
+    <h1>Test Validare</h1>
+    <form>
+        <div class="form-group">
+            <label for="username">
+                Username:
+            </label>
+            <input
+                type="text"
+                id="username"
+                required
+                minlength="5"
+                pattern="[a-z0-9]{5,}"
+                placeholder="doar litere mici și cifre">
+        </div>
+        <div class="form-group">
+            <label for="password">
+                Parolă:
+            </label>
+            <input
+                type="password"
+                id="password"
+                required
+                pattern="^(?=.*[A-Z]){8,}$"
+                placeholder="Minim 8 caractere">
+        </div>
+        <div class="form-group">
+            <label for="date">
+                Data Rezervării:
+            </label>
+            <input
+                type="date"
+                id="date"
+                min="2026-05-01"
+                max="2026-05-31"
+                required>
+        </div>
+        <div class="form-group">
+            <label for="themeColor">
+                Culoare Temă:
+            </label>
+            <input
+                type="color"
+                id="themeColor"
+                value="#dfe8f5">
+        </div>
+        <button
+            type="submit"
+            class="btn">
+            Trimite Datele
+        </button>
+    </form>
+</div>
+<script>
+    const colorPicker =
+    document.getElementById("themeColor");
+    colorPicker.addEventListener("input",function(){
+        document.documentElement.style.setProperty(
+            "--theme-color",
+            this.value
+        );
+    });
+</script>
+</body>
+</html>
